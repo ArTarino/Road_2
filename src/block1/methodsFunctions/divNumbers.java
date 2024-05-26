@@ -1,6 +1,7 @@
 package block1.methodsFunctions;
 
 public class divNumbers {
+    //
     public static void main(String[] args) {
         float a1 = 10;
         float a2 = 7;

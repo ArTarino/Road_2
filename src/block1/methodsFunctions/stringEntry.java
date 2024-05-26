@@ -1,6 +1,7 @@
 package block1.methodsFunctions;
 
 public class stringEntry {
+    //
     public static void main(String[] args) {
         String text1 = "перпендикулярность";
         char char1 = 'п';
