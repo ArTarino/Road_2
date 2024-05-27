@@ -1,3 +1,6 @@
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class taskFor {
@@ -47,9 +50,9 @@ public class taskFor {
         Scanner scan3 = new Scanner(System.in);
         System.out.println("Введите любое число от 1 и выше:");
         int N3 = scan3.nextInt();
-        int factorial = 1;
+        BigInteger factorial = BigInteger.ONE;
         for (int h = 1; h<=N3; h++) {
-            factorial *= h;
+            factorial = factorial.multiply(BigInteger.valueOf(h));
         }
         System.out.println("Факториал числа " + N3 + " равен: " + factorial);
 
@@ -97,5 +100,45 @@ public class taskFor {
             }
             System.out.println();
         }
+
+        // Пункт 10
+        Scanner scan7 = new Scanner(System.in);
+        System.out.print("Введите любое число");
+        int N7 = scan6.nextInt();
+        System.out.println("Ряд чисел Амстронга до вашего числа следующий: ");
+
+        int numb = 0;
+        while (numb < N7) {
+            if (isArmstrongNumb(numb)) {
+                System.out.println(numb);
+            }
+            numb++;
+        }
+    }
+
+    public static boolean isArmstrongNumb (int numb) {
+        int originalNumber, remainder, result = 0, n = 0;
+        originalNumber = numb;
+        while (originalNumber != 0) {
+            originalNumber /= 10;
+            ++n;
+        }
+        originalNumber = numb;
+        while (originalNumber != 0) {
+            remainder = originalNumber % 10;
+            result += Math.pow(remainder, n);
+            originalNumber /= 10;
+        }
+        return result == numb;
+    }
+
+    public static List<Integer> findArmstrongNumbers (int n) {
+        List<Integer> ArmstrongNumbers = new ArrayList<>();
+        for (int d = 1; d <= n; d++) {
+            if (isArmstrongNumb(d)) {
+                ArmstrongNumbers.add(d);
+            }
+        }
+        return ArmstrongNumbers;
     }
 }
