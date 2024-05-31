@@ -1,6 +1,7 @@
 package block1.methodsFunctions;
 
 public class diffNumbers {
+    //
     public static void main(String[] args) {
         int a1 = 10;
         int a2 = 7;

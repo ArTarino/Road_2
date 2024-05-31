@@ -3,32 +3,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class taskWhile {
+public class taskFor {
     public static void main(String[] args) {
         // Пункт 1
-        int a = 1;
-        do {
-            System.out.println(a);
-            a++;
-        } while (a < 11);
-        // Пункт 2
+        for (int x = 1; x <= 10; x++) {
+            System.out.println(x);
+        }
         System.out.println(" ");
-        int b = 10;
-        while (b > 0) {
-            System.out.println(b);
-            b--;
+        // Пункт 2
+        for (int x1 = 10; x1 > 0; x1--) {
+            System.out.println(x1);
         }
         // Пункт 3
         Scanner scan = new Scanner(System.in);
-        System.out.println("Введите любое число");
+        System.out.println("Введите любое число от 1 и выше");
         int N = scan.nextInt();
-
         int sum = 0;
-        int i = 1;
-
-        while (i <= N) {
+        for (int i = 1; i <= N; i++) {
             sum += i;
-            i++;
         }
         System.out.println("Сумма чисел от 1 до " + N + " равна " + sum);
 
@@ -37,25 +29,21 @@ public class taskWhile {
         System.out.println("Введите любое число от 1 выше");
         int N1 = scan1.nextInt();
         System.out.println("Четные числа от 1 до " + N1 + ": ");
-        int j = 1;
-        while (j <= N1) {
+        for (int j = 1; j <= N1; j++) {
             if (j % 2 == 0) {
                 System.out.println(j);
             }
-            j++;
         }
 
         // Пункт 5
         Scanner scan2 = new Scanner(System.in);
         System.out.println("Введите любое число от 1 выше");
         int N2 = scan2.nextInt();
-        System.out.println("Нечетные числа от 1 до " + N2 + ": ");
-        int h = 1;
-        while (h <= N2) {
-            if (h % 2 != 0) {
-                System.out.println(h);
+        System.out.println("Нечетные числа от 1 до " + N1 + ": ");
+        for (int j = 1; j <= N1; j++) {
+            if (j % 2 != 0) {
+                System.out.println(j);
             }
-            h++;
         }
 
         // Пункт 6
@@ -63,10 +51,8 @@ public class taskWhile {
         System.out.println("Введите любое число от 1 и выше:");
         int N3 = scan3.nextInt();
         BigInteger factorial = BigInteger.ONE;
-        int g = 1;
-        while (g<=N3) {
-            factorial *= g;
-            g++;
+        for (int h = 1; h<=N3; h++) {
+            factorial = factorial.multiply(BigInteger.valueOf(h));
         }
         System.out.println("Факториал числа " + N3 + " равен: " + factorial);
 
@@ -75,29 +61,26 @@ public class taskWhile {
         System.out.println("Введите число любое число от 1 и выше");
         int N4 = scan4.nextInt();
         int one = 0;
-        int two = 1;
         int next;
         System.out.println("Числа Фибоначчи до " + N4 + ":");
         System.out.print(one + " ");
-
-        while (two<=N4) {
+        for (int two = 1; two <= N4; two = next) {
             System.out.print(two + " ");
             next = one + two;
             one = two;
             two = next;
         }
+
         // Пункт 8
         Scanner scan5 = new Scanner(System.in);
         System.out.println("Введите любое число");
         int N5 = scan5.nextInt();
         boolean isPrime = true;
-        int k = 2;
-        while (k <= N5 / 2) {
-            if (N5 % k == 0) {
+        for (int i = 2; i <= N5 / 2; i++) {
+            if (N5 % i == 0) {
                 isPrime = false;
                 break;
             }
-            i++;
         }
         if (isPrime) {
             System.out.println("Число " + N5 + " является простым числом");
@@ -111,15 +94,11 @@ public class taskWhile {
         int N6 = scan6.nextInt();
         System.out.println("Таблица умножения до " + N6 + ":");
 
-        int l = 1;
-        while (l <= N6) {
-            int f = 1;
-            while (f <= 10) {
+        for (int l = 1; l <= N6; l++) {
+            for (int f = 1; f <= 10; f++) {
                 System.out.println(l + " * " + f + " = " + (l * f));
-                f++;
             }
             System.out.println();
-            l++;
         }
 
         // Пункт 10
@@ -153,13 +132,11 @@ public class taskWhile {
         return result == numb;
     }
 
-    public static List<Integer> findArmstrongNumbers ( int n) {
+    public static List<Integer> findArmstrongNumbers (int n) {
         List<Integer> ArmstrongNumbers = new ArrayList<>();
-        int d = 1;
-        while (d <= n) {
+        for (int d = 1; d <= n; d++) {
             if (isArmstrongNumb(d)) {
-                    ArmstrongNumbers.add(d);
-                    d++;
+                ArmstrongNumbers.add(d);
             }
         }
         return ArmstrongNumbers;
